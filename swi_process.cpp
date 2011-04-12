@@ -128,7 +128,7 @@ void do_phase_mask(IoParams& params, MRI* mag, MRI* pha, MRI* out)
     std::cout << "Performing phase mask multiplication with cutoff " << params.phasecutoff << " ..\n";
     std::cout << "Performing phase mask multiplication with right cutoff " << params.phasercutoff << " ..\n";
     std::cout << "Number of phase multiplications " << params.phasemult << " ..\n";
-    if ( fabs( fabs(params.phasecutoff) - fabs(params.phasercutoff)) < 0.0001 ) 
+    if ( fabs( fabs(params.phasecutoff) - fabs(params.phasercutoff)) > 0.0001 ) 
         std::cerr << "ERROR: symmetric option implies both left cutoff and right cutoff are almost same\n";
     for ( int i=0; i < out->width; i++)
       for ( int j=0; j < out->height; j++)
